@@ -11,7 +11,8 @@ const App = () => {
   return (
     <div className="container">
       <h1>Lista de Tareas</h1>
-      <TaskForm onAddTask={handleAddTask} />
+{/*       //la función handleAddTask como prop 
+ */}      <TaskForm onAddTask={handleAddTask} /> 
       <ul className="list-group">
         {tasks.map((task, index) => (
           <li key={index} className="list-group-item">
