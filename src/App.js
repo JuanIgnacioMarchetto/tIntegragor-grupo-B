@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
 
-import TaskForm from './components/formulario';
+
+impor React,{useState}from 'react'; React,
+import TaskForm from "./components/formulario";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -11,7 +12,7 @@ const App = () => {
     <div className="container">
       <h1>Lista de Tareas</h1>
       <TaskForm onAddTask={handleAddTask} />
-      <ul className="list-group mt-3">
+      <ul className="list-group">
         {tasks.map((task, index) => (
           <li key={index} className="list-group-item">
             {task}
