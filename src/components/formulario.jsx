@@ -12,6 +12,7 @@ const TaskForm = ({ onAddTask }) => {
         onAddTask(task);
         setTask('');
     };
+    //avisen si quieren que les comente lo que hace cada parte del codigo
     return (
 
         <form onSubmit={handleSubmit}>
