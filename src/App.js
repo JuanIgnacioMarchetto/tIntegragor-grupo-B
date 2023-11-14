@@ -1,6 +1,6 @@
 
+import React, { useState } from 'react';
 
-impor React,{useState}from 'react'; React,
 import TaskForm from "./components/formulario";
 
 const App = () => {
