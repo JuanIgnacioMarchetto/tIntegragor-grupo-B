@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TaskForm from './components/formulario';
+import TaskForm from './components/formulario/formulario';
 import TaskItem from './components/taskItem/taskIten';
 
 const App = () => {

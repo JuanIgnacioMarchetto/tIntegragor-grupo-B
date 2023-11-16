@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './TaskForm.css'; 
 
 const TaskForm = ({ onAddTask }) => {
     const [task, setTask] = useState('');
@@ -16,7 +16,7 @@ const TaskForm = ({ onAddTask }) => {
     };
     return (
 
-        <form onSubmit={handleSubmit}>
+        <form className='task-form' onSubmit={handleSubmit}>
             <div className="conteinerform">
                 <label htmlFor="taskInput" className="form-label">
                     Nueva Tarea
