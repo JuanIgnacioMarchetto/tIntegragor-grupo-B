@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-
+import TaskItem from './components/taskItem/taskIten';
 import TaskForm from "./components/formulario";
 
 const App = () => {
@@ -11,8 +11,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>Lista de Tareas</h1>
-{/*       //la función handleAddTask como prop 
- */}      <TaskForm onAddTask={handleAddTask} /> 
+{}      <TaskForm onAddTask={handleAddTask} /> 
       <ul className="list-group">
         {tasks.map((task, index) => (
           <li key={index} className="list-group-item">
