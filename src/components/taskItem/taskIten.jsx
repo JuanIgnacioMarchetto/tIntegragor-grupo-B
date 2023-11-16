@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
- import './TaskItem.css'
+import React from 'react';
+import './TaskItem.css';
 
-const TaskItem = ({description}) => {
-  const [completed, setCompleted]= useState(false);
-  const handleComplete=()=>{
-    setCompleted(!completed);
-  }
+const TaskItem = ({ task, onCompleteTask, onDeleteTask }) => {
+  const { id, description, completed } = task;
+
+  const handleComplete = () => {
+    onCompleteTask(id, !completed);
+  };
+
+  const handleDelete = () => {
+    onDeleteTask(id);
+  };
 
   return (
-    <div className='item-container'>
-      <p className={completed ? 'taskComplete' : 'task-item'}>{description}</p>
-      <button type='button' onClick={handleComplete}>
-        Completar
-      </button>
-    </div>
+    <li className="list-group-item">
+      <div className={`item-container ${completed ? 'completed' : ''}`}>
+        <p>{description}</p>
+        <button type="button" onClick={handleComplete}>
+          Confirmar
+        </button>
+        <button type="button" onClick={handleDelete}>
+          Eliminar
+        </button>
+      </div>
+    </li>
   );
 };
 
-export default TaskItem
+export default TaskItem;
