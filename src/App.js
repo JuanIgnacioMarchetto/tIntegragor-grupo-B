@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import TaskItem from './components/taskItem/TaskItem';
 import TaskForm from './components/formulario';
+import TaskItem from './components/taskItem/taskIten';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Lista de Tareas</h1>
+      <h1>To Do List</h1>
       <TaskForm onAddTask={handleAddTask} />
       <ul className="list-group">
         {tasks.map((task) => (
