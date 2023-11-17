@@ -16,6 +16,18 @@ const TaskForm = () => {
         setTaskDeadline(date);
     };
 
+    const handleDeleteTask = (index) => {
+        const updatedTasks = [...tasks];
+        updatedTasks.splice(index, 1);
+        setTasks(updatedTasks);
+    };
+
+    const handleConfirmTask = (index) => {
+        // Aquí puedes realizar alguna acción cuando se confirma la tarea
+        // Por ahora, solo imprimimos un mensaje en la consola
+        console.log(`Tarea confirmada: ${tasks[index].description}`);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const newTask = {
@@ -28,8 +40,6 @@ const TaskForm = () => {
         setTaskDeadline('');
     };
 
-    const handleConfirmTask=(index)=>{console.log('Tarea realizada:$tasks.[index]')}
-    const handleDeleteTask=(index)=>{const updatedTasks=[...tasks];updatedTasks.splice(index,1);setTasks(updatedTasks)}
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -42,7 +52,6 @@ const TaskForm = () => {
             </div>
             <button type="submit">Agregar tarea</button>
 
-            { }
             {tasks.map((task, index) => (
                 <div key={index}>
                     <p>Tu tarea:</p>
