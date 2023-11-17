@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './formulario.css'; 
+import Datetime from'react-datetime.css';
+import 'react-datetime/css/react-datetime.css'
 
 const TaskForm = ({ onAddTask }) => {
     const [task, setTask] = useState('');
