@@ -23,8 +23,6 @@ const TaskForm = () => {
     };
 
     const handleConfirmTask = (index) => {
-        // Aquí puedes realizar alguna acción cuando se confirma la tarea
-        // Por ahora, solo imprimimos un mensaje en la consola
         console.log(`Tarea confirmada: ${tasks[index].description}`);
     };
 
