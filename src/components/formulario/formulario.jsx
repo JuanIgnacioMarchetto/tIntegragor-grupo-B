@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './formulario.css';
+import './Formulario.css';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 
