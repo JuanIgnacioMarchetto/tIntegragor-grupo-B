@@ -3,45 +3,42 @@ import './formulario.css';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 
-const TaskForm = ({ onAddTask }) => {
-    const [task, setTask] = useState('');
-    const [selectedDate, setSelectedDate] = useState(null);
+const TaskForm = () => {
+    const [taskDescription, setTaskDescription] = useState('');
+    const [taskDeadline, setTaskDeadline] = useState('');
 
-    const handleInputChange = (e) => {
-        setTask(e.target.value);
+    const handleDescriptionChange = (e) => {
+        setTaskDescription(e.target.value);
     };
 
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
+    const handleDeadlineChange = (date) => {
+        setTaskDeadline(date);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (task.trim() !== '') {
-            onAddTask(task, selectedDate);
-            setTask('');
-            setSelectedDate(null);
-        }
+        const newTask = {
+        description: taskDescription,
+            deadline: taskDeadline
     };
-
-    return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="taskInput">Task:</label>
-            <input
-                type="text"
-                id="taskInput"
-                value={task}
-                onChange={handleInputChange}
-            />
-            <label>Date and Time:</label>
-            <Datetime
-                inputProps={{ id: 'datetimeInput' }}
-                value={selectedDate}
-                onChange={handleDateChange}
-            />
-            <button type="submit">Add Task</button>
-        </form>
-    );
+    console.log(newTask);
+    setTaskDescription('');
+    setTaskDeadline('');
 };
+
+return (
+    <form onSubmit={handleSubmit}>
+        <div>
+            <label>Descripción de la tarea:</label>
+            <input type="text" value={taskDescription} onChange={handleDescriptionChange} />
+        </div>
+        <div>
+            <label>Fecha límite:</label>
+            <Datetime value={taskDeadline} onChange={handleDeadlineChange} />
+        </div>
+        <button type="submit">Agregar tarea</button>
+    </form>
+);
+   };
 
 export default TaskForm;
