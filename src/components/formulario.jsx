@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const TaskForm = ({ onAddTask }) => {
     const [task, setTask] = useState('');
     const handleInputChange = (e) => {
@@ -14,8 +15,9 @@ const TaskForm = ({ onAddTask }) => {
         setTask('');
     };
     return (
+
         <form onSubmit={handleSubmit}>
-            <div className="mb-3">
+            <div className="conteinerform">
                 <label htmlFor="taskInput" className="form-label">
                     Nueva Tarea
                 </label>
@@ -27,7 +29,7 @@ const TaskForm = ({ onAddTask }) => {
                     onChange={handleInputChange}
                 />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn Add">
                 Agregar Tarea
             </button>
         </form>
