@@ -1,27 +1,25 @@
 import React from 'react';
+import './TaskItem.css';
 
 
-const TaskItem = ({ task, onCompleteTask, onDeleteTask }) => {
-  const { id, description, completed } = task;
-
-  const handleComplete = () => {
-    onCompleteTask(id, !completed);
-  };
-
-  const handleDelete = () => {
-    onDeleteTask(id);
-  };
+const TaskItem = ({ id, description, completed, completeTask, deleteTask }) => {
 
   return (
     <li className="list-group-item">
-      <div className={`item-container ${completed ? 'completed' : ''}`}>
-        <p>{description}</p>
-        <button type="button" onClick={handleComplete}>
-          Confirmar
-        </button>
-        <button type="button" onClick={handleDelete}>
-          Eliminar
-        </button>
+      <div className={completed ? 'taskComplete' : 'task-container'}>
+        <div
+          className='task-description'>
+          {description}
+        </div>
+        <div className='buttons-container'>
+          <button type="button" onClick={() =>completeTask(id)}>
+            complete
+          </button>
+          <button type="button" onClick={() =>deleteTask(id)}>
+            Delete
+          </button>
+        </div>
+        
       </div>
     </li>
   );
