@@ -1,4 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from "react";
+import TaskForm from "./components/formulario/formulario";
+import "./App.css";
+
+const App = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleToggleForm = () => {
+    setShowForm(!showForm);
+  };
+
+  return (
+    <div className="container" style={{ backgroundImage: `url(./components/imagenes/backgroundmadera.jpg)` }}>
+      <h1>To Do List</h1>
+      <button onClick={handleToggleForm}>
+        {showForm ? "Ocultar formulario" : "Agregar tarea"}
+      </button>
+      {showForm && <TaskForm onHideForm={() => setShowForm(false)} />}
+    </div>
+  );
+};
+
+export default App;
+
+
+/* import React, { useState, useEffect } from 'react';
 import TaskForm from './components/formulario/formulario';
 import TaskItem from './components/taskItem/taskIten';
 import './App.css';
@@ -32,6 +57,7 @@ const App = () => {
   };
 
   return (
+    <App>
     <div className="container">
       <h1>To Do List</h1>
       <TaskForm onAddTask={handleAddTask} />
@@ -45,8 +71,9 @@ const App = () => {
           />
         ))}
       </ul>
-    </div>
+    </div></App>
   );
 };
 
 export default App;
+ */
