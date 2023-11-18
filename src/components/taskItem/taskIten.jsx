@@ -1,4 +1,5 @@
 import React from 'react';
+import './taskIten.css';
 
 
 const TaskItem = ({ task, onCompleteTask, onDeleteTask }) => {

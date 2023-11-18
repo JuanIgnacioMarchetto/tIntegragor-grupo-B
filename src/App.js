@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TaskForm from './components/formulario/formulario';
 import TaskItem from './components/taskItem/taskIten';
+import './App.css';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
