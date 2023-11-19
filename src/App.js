@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/* import React, { useState } from "react";
 import TaskForm from "./components/formulario/formulario";
 import "./App.css";
 
@@ -20,12 +20,12 @@ const App = () => {
   );
 };
 
-export default App;
+export default App; */
 
 
-/* import React, { useState, useEffect } from 'react';
-import TaskForm from './components/formulario/formulario';
-import TaskItem from './components/taskItem/taskIten';
+import React, { useState, useEffect } from 'react';
+import TaskForm from './components/formulario/TaskForm.jsx';
+import TaskItem from './components/TaskItem/TaskItem.jsx';
 import './App.css';
 
 const App = () => {
@@ -76,4 +76,3 @@ const App = () => {
 };
 
 export default App;
- */
