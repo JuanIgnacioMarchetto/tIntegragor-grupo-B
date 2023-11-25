@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Datetime from "react-datetime";
 import "react-datetime/css/react-datetime.css";
+import { getCLS, getFID, getLCP, getFCP, getTTFB } from 'web-vitals';
+
 //probando si mi clon funciono bien
 const TaskForm = ({ onHideForm }) => {
   const [taskDescription, setTaskDescription] = useState("");

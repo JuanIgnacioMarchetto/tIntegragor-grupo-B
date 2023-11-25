@@ -1,46 +1,41 @@
-import React,{useState}  from 'react'
-import TaskItem from '../TaskItem/TaskItem';
-import TaskForm from '../formulario/TaskForm';
 
 
-function TaskList(){
+import React, { useState, useEffect } from 'react';
+import TaskItem from './TaskItem'; 
 
-  const [tasksArray, setTaskArray] = useState([]) //estado inicial del arreglo de tareas(vacio)
+function TaskList() {
+  const [tasksArray, setTaskArray] = useState([]);
 
-  const addTask = task =>{
-    console.log("task added");
-    console.log(task);
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTaskArray(storedTasks);
+  }, []);
 
-    if(task.description.trim()){
-      task.description = task.description.trim();
-      const updatedTasks = [task, ...tasksArray]//paso los elementos a individuales
-      setTaskArray(updatedTasks)
-    }
-  }
+  const addTask = (task) => {
+    const updatedTasks = [task, ...tasksArray];
+    setTaskArray(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
 
-  const deleteTask = id =>{
-    const updatedTasks = tasksArray.filter(task => task.id === id);
-    setTaskArray(updatedTasks)
-  }
+  const deleteTask = (id) => {
+    const updatedTasks = tasksArray.filter((task) => task.id !== id);
+    setTaskArray(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
 
-  const completeTask = id=>{
-    const updatedTasks = tasksArray.map(task =>{
-      if(task.id === id){
-        task.completed = !task.completed
-      }
-      return task
-    })
-    setTaskArray(updatedTasks)
-  }
-
-
+  const completeTask = (id) => {
+    const updatedTasks = tasksArray.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    );
+    setTaskArray(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
 
   return (
     <>
-      <TaskForm onSubmit={addTask}/>
-      <div className='task-list-container' >
-        {
-          tasksArray.map((task)=>
+      <TaskForm onAddTask={addTask} />
+      <div className='task-list-container'>
+        {tasksArray.map((task) => (
           <TaskItem
             key={task.id}
             id={task.id}
@@ -48,12 +43,11 @@ function TaskList(){
             completed={task.completed}
             deleteTask={deleteTask}
             completeTask={completeTask}
-            />
-            )}
+          />
+        ))}
       </div>
-    
     </>
-  )
+  );
 }
 
-export default TaskList
+export default TaskList;
