@@ -1,44 +1,49 @@
-import React, {useState} from 'react';
-import './TaskForm.css';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from "react";
+import Datetime from "react-datetime";
+import "react-datetime/css/react-datetime.css";
 
+const TaskForm = ({ onAddTask }) => {
+  const [taskDescription, setTaskDescription] = useState("");
+  const [taskDeadline, setTaskDeadline] = useState("");
 
-const TaskForm = (props) => {
+  const handleDescriptionChange = (e) => {
+    setTaskDescription(e.target.value);
+  };
 
-    const [input, setInput] = useState('');
-    
+  const handleDeadlineChange = (date) => {
+    setTaskDeadline(date);
+  };
 
-    const handleChange = e =>{
-        setInput(e.target.value) //me traigo el valor del input
-        console.log(e.target.value)    
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (taskDescription.trim()) {
+      const newTask = {
+        id: Date.now(),
+        description: taskDescription.trim(),
+        deadline: taskDeadline ? taskDeadline.format("YYYY-MM-DD HH:mm:ss") : "",
+        completed: false,
+      };
+
+      onAddTask(newTask);
+
+      setTaskDescription("");
+      setTaskDeadline("");
     }
+  };
 
-    const handleSubmmit = e =>{
-        e.preventDefault();
-        const newTask = {
-            id:uuidv4(),
-            description:input,
-            completed:false
-        }
-        props.onSubmit(newTask)
-    }
-   
-    return (
-        <form
-         onSubmit={handleSubmmit}>
-            <div>
-                <input className='input-task' type="text"
-                 placeholder='Create New Task'
-                 name='description'
-                 onChange={handleChange}/>
-                </div>
-            <button 
-            className='tarea-boton'>
-                    Add Task
-            </button>
-
-        </form>
-    );
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Descripción de la tarea:</label>
+        <input type="text" value={taskDescription} onChange={handleDescriptionChange} />
+      </div>
+      <div>
+        <label>Fecha límite:</label>
+        <Datetime value={taskDeadline} onChange={handleDeadlineChange} />
+      </div>
+      <button type="submit">Agregar tarea</button>
+    </form>
+  );
 };
 
 export default TaskForm;
