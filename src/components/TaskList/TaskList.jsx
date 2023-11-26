@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import TaskItem from './TaskItem';
-import TaskForm from './TaskForm';
+import TaskItem from './TaskList';
+import TaskForm from '../formulario/TaskForm';
 import './TaskList.css';
 import { v4 as uuidv4 } from 'uuid';
 
