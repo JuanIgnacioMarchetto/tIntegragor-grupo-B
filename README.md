@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Trabajo Integrador Final - Desarrollador Web con React JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+Este proyecto es el resultado del Trabajo Integrador Final desarrollado en el marco del programa de colaboración con la Universidad Tecnológica Nacional (UTN) en Argentina. Se trata de una aplicación web construida con React JS que permite gestionar una lista de tareas.
 
-In the project directory, you can run:
+## Captura de Pantalla
 
-### `npm start`
+![Captura de Pantalla](Captura_de_Pantalla.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requerimientos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Componentes Funcionales
 
-### `npm test`
+#### 1. Componente de Lista de Tareas (TaskList):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este componente muestra la lista de tareas. Recibe como propiedades la lista de tareas y funciones para gestionar eventos relacionados con las tareas, como marcar como completada, eliminar, etc. Cada tarea se representa mediante un componente TaskItem.
 
-### `npm run build`
+#### 2. Componente de Tarea (TaskItem):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Representa individualmente una tarea, mostrando el nombre de la tarea y un botón para completarla. Utiliza el estado local para gestionar la apariencia de la tarea, por ejemplo, tachado cuando está completada.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 3. Componente de Formulario (TaskForm):
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Contiene un formulario para agregar nuevas tareas. Utiliza el estado local para gestionar la entrada del usuario y envía la nueva tarea a la lista principal.
 
-### `npm run eject`
+### Estado con useState
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### 1. Estado Principal (tasks):
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Utiliza el hook useState en el componente principal para gestionar el estado de la lista de tareas. Cada tarea es un objeto con propiedades como id, nombre, y completada.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Efectos con useEffect
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### 1. Efecto de Actualización (useEffect en el componente principal):
 
-## Learn More
+Utiliza useEffect para realizar una acción (por ejemplo, mostrar un mensaje) cuando el estado de la lista de tareas cambia.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Interacción con el Usuario - Eventos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### 1. Eventos en Componente de Lista (TaskList):
 
-### Code Splitting
+Implementa eventos que permiten al usuario interactuar con cada tarea, como marcar como completada, eliminar, etc. Estos eventos modifican el estado principal (tasks).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### 2. Eventos en Componente de Formulario (TaskForm):
 
-### Analyzing the Bundle Size
+Implementa eventos para gestionar la entrada del usuario y agregar nuevas tareas a la lista.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Estilo y Diseño
 
-### Making a Progressive Web App
+Aplica estilos CSS para mejorar la apariencia de los componentes. Se puede utilizar bibliotecas como styled-components si se desea.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Puntos Extra (Opcionales)
 
-### Advanced Configuration
+Implementa la persistencia de datos utilizando localStorage para que las tareas persistan incluso después de recargar la página.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Formato de Entrega
 
-### Deployment
+Envía un archivo .rar o .zip con el siguiente formato: `apellido_entregafinal.rar`. Dentro del .rar o .zip, incluye el/los archivos de React JS, excluyendo la carpeta `node_modules`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Colaboración
 
-### `npm run build` fails to minify
+La colaboración en el desarrollo se llevó a cabo mediante reuniones virtuales utilizando Zoom para facilitar la comunicación en tiempo real entre los miembros del equipo. Además, se utilizó un sistema de control de versiones basado en Git para gestionar y coordinar eficientemente el trabajo de desarrollo. Este enfoque permitió a los desarrolladores colaborar de manera efectiva, mantener un historial completo de cambios en el código y facilitar la integración de nuevas características al proyecto de manera coordinada.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
