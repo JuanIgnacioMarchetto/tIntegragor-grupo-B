@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto es el resultado del Trabajo Integrador Final desarrollado en el marco del programa de colaboración con la Universidad Tecnológica Nacional (UTN) en Argentina. Se trata de una aplicación web construida con React JS que permite gestionar una lista de tareas.
+Este proyecto es el resultado del Trabajo Integrador Final desarrollado en el marco del programa de colaboración con la Universidad Tecnológica Nacional (UTN) y  Argentina Programa. Se trata de una aplicación web construida con React JS que permite gestionar una lista de tareas.
 
 ## Captura de Pantalla
 
