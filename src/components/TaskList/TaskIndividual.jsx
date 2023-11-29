@@ -1,6 +1,7 @@
 import React from 'react';
 import { TiDeleteOutline } from "react-icons/ti";
 import { TaskUpdate } from './TaskUpdate';
+import { IconButton } from '@chakra-ui/react';
 
 export const TaskIndividual= ({
 	todo,

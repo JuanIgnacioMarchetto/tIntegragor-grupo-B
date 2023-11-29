@@ -1,8 +1,9 @@
 import './App.css';
 import TaskForm from "./components/formulario/formulario";
 import { useTodo } from "./components/hooks/useTodo";
-import {TaskList} from './components/TaskList/TaskList'
-import { ChakraProvider } from '@chakra-ui/react'
+import {TaskList} from './components/TaskList/TaskList';
+import { ChakraProvider } from '@chakra-ui/react';
+import { Box, Center } from '@chakra-ui/react';
 
 const App = () => {
   const {
@@ -15,15 +16,12 @@ const App = () => {
 
   return (
 	<ChakraProvider>
-			<div className='card-to-do'>
 				<h1>Lista de tareas</h1>
+			<Center h="100vh">
+			<Box p={8} borderWidth="1px" borderRadius="md" boxShadow="md">
 				<div className='counter-todos'>
 				</div>
 
-				<div className='add-todo'>
-					<h3>Agregar Tarea</h3>
-					<TaskForm onAddTask={onAddTask} />
-				</div>
 
 				<TaskList
 					todos={todos}
@@ -31,7 +29,12 @@ const App = () => {
 					handleDeleteTodo={handleDeleteTodo}
 					handleCompleteTodo={handleCompleteTodo}
 				/>
-			</div>
+				<div className='add-todo'>
+					<h3>Agregar Tarea</h3>
+					<TaskForm onAddTask={onAddTask} />
+				</div>
+				</Box>
+			</Center>
 		</ChakraProvider>
 
 	);
