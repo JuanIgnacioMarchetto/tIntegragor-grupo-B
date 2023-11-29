@@ -50,7 +50,7 @@ const TaskList = () => {
         {tasksArray.map((task) => (
           <TaskItem
             key={task.id}
-            id={task.id}
+            id={task.id}         
             description={task.description}
             completed={task.completed}
             deleteTask={deleteTask}
