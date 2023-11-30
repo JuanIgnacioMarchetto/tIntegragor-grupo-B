@@ -30,14 +30,19 @@ button {
   outline: none;
 }
 
-.boxTareas{
+.boxTareas {
   margin: auto;
   background-image: url(../../../public/hoja_cuaderno.png);
   background-size: cover;
-  height: 500px;
-  width:500px;
+  height: 50vh;
+  width: 50vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 5%;
+}
+@media screen and (max-width: 768px) {
+  .boxTareas {
+    height: 80vh;
+    width: 80vw; }
 }
