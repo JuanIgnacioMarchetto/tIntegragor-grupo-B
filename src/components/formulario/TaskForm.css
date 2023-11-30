@@ -32,7 +32,7 @@ button {
 
 .boxTareas {
   margin: auto;
-  background-image: url(https://images.app.goo.gl/MCP1x1FzwudaJVtk);
+  background-image: url("https://images.app.goo.gl/MCP1x1FzwudaJVtk");
   background-size: cover;
   height: 50vh;
   width: 50vw;
