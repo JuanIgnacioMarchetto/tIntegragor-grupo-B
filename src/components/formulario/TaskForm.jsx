@@ -23,7 +23,7 @@ const TaskForm = ({ addTask }) => {
   
     const handleSubmit = (values, { resetForm }) => {
       if (values.taskName.trim() !== "") {
-        // Validar la fecha actual
+        
         const currentDate = new Date();
         const selectedDate = new Date(values.taskDeadline);
   
@@ -62,7 +62,7 @@ const TaskForm = ({ addTask }) => {
             <Field
               type="date"
               name="taskDeadline"
-              placeholder="Deadline (optional)"
+              placeholder="Add New Task.."
               as={Input}
               aria-label="Deadline"
             />
@@ -71,12 +71,10 @@ const TaskForm = ({ addTask }) => {
                 {error}
               </Text>
             )}
-            <Text fontSize="sm" color="gray.500" mb={2}>
-              *Optional field: Task deadline
-            </Text>
+     
   
             <Button type="submit" colorScheme="blue">
-              Add task
+              Add New task
             </Button>
           </VStack>
         </Form>
