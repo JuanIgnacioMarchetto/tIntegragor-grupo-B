@@ -11,6 +11,7 @@
     padding: 1px;
 }
 
+
 .css-tl3ftk {
     display: flex;
     -webkit-box-align: center;
@@ -18,8 +19,8 @@
     flex-direction: column;
     gap: 0.5rem;
     align-content: space-between;
+   margin: 10px;
 }
-
 button{
     width: fit-content;
     height: fit-content;
