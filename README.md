@@ -1,8 +1,8 @@
 Trabajo Integrador Final - Desarrollador Web con React JS
 Descripción
 Este proyecto es el resultado del Trabajo Integrador Final desarrollado en el marco del programa de colaboración con la Universidad Tecnológica Nacional (UTN) y Argentina Programa. Se trata de una aplicación web construida con React JS que permite gestionar una lista de tareas.
+![image](https://github.com/JuanIgnacioMarchetto/tIntegragor-grupo-B/assets/43477348/fd3f50f3-1c74-4c2e-a662-74f0d492418a)
 
-![image](https://github.com/JuanIgnacioMarchetto/tIntegragor-grupo-B/assets/43477348/7b85898e-48d5-4eea-9d6b-75b99713e834)
 
 Requerimientos
 Componentes Funcionales
