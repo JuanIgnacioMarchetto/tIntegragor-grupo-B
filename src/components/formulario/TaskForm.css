@@ -30,22 +30,22 @@ button {
   outline: none;
 }
 
-
 .boxTareas {
   margin: auto;
-  background-image: url("https://img.freepik.com/fotos-premium/fondo-papel-cuaderno-lineas-papel_322958-572.jpg?w=1060");
+  background-image: url('https://img.freepik.com/fotos-premium/fondo-papel-cuaderno-lineas-papel_322958-572.jpg?w=1060');
   background-size: cover;
-  height: 50vh;
-  width: 50vw;
+  height: 500px;
+  width: 500px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 15px;
 }
 
+/* Media Query para pantallas más pequeñas (ej. dispositivos móviles) */
 @media screen and (max-width: 768px) {
   .boxTareas {
-    height: 80vh;
-    width: 80vw;
+    height: 80vh; /* Ajusta según tus necesidades para dispositivos más pequeños */
+    width: 80vw; /* Ajusta según tus necesidades para dispositivos más pequeños */
   }
 }
