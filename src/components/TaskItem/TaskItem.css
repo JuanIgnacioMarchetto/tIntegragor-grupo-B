@@ -12,8 +12,7 @@
 }
 
 .css-tl3ftk {
-    display: flex;
-    -webkit-box-align: center;
+    display:flex;
     align-items: start;
     flex-direction: column;
     gap: 0.5rem;
