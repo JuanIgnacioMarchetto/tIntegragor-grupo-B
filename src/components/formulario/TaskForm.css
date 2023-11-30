@@ -1,6 +1,5 @@
 
 .item-container {
-  background-image: url('fondo.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 500px;
@@ -31,6 +30,14 @@ button {
   outline: none;
 }
 
-form{
-  background-image: url('../TaskList/fondoTareas.jpg');
+.boxTareas{
+  margin: auto;
+  background-image: url(../../../public/hoja_cuaderno.png);
+  background-size: cover;
+  height: 500px;
+  width:500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
 }
