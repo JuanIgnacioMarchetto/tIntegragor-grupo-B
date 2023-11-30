@@ -1,102 +1,83 @@
-/* import React, { useState } from "react";
-import TaskForm from "./components/formulario/formulario";
-import "./App.css";
+import React, { useState, useEffect } from "react";
+import { Box,Text} from "@chakra-ui/react";
+import TaskForm from "./components/formulario/TaskForm.jsx";
+import TaskList from './components/TaskList/TaskList.jsx'
+import './App.css'
+
 
 const App = () => {
-  const [showForm, setShowForm] = useState(false);
+    const [tasks, setTasks] = useState([]);
+  
+    useEffect(() => {
+      const storedTasks = localStorage.getItem("tasks");
+      if (storedTasks) {
+        setTasks(JSON.parse(storedTasks));
+      }
+    }, []);
+  
+    useEffect(() => {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
+  
+    const addTask = (taskName, taskDeadline) => {
+      const newTask = {
+        id: Date.now(),
+        name: taskName,
+        deadline: taskDeadline,
+        completed: false
+      };
+      setTasks([...tasks, newTask]);
+    };
+  
+    const completeTask = (taskId) => {
+      const updatedTasks = tasks.map((task) =>
+        task.id === taskId ? { ...task, completed: !task.completed } : task
+      );
+      setTasks(updatedTasks);
+    };
+  
+    const deleteTask = (taskId) => {
+      const updatedTasks = tasks.filter((task) => task.id !== taskId);
+      setTasks(updatedTasks);
+    };
+  
+    return (
 
-  const handleToggleForm = () => {
-    setShowForm(!showForm);
-  };
-
-  return (
-    <div className="container" style={{ backgroundImage: `url(./components/imagenes/backgroundmadera.jpg)` }}>
-      <h1>To Do List</h1>
-      <button onClick={handleToggleForm}>
-        {showForm ? "Ocultar formulario" : "Agregar tarea"}
-      </button>
-      {showForm && <TaskForm onHideForm={() => setShowForm(false)} />}
-    </div>
-  );
-};
-
-export default App; */
-import React, { useState } from "react";
-import TaskForm from "./components/formulario/formulario";
-import "./App.css";
-
-const App = () => {
-  const [showForm, setShowForm] = useState(false);
-
-  const handleToggleForm = () => {
-    setShowForm(!showForm);
-  };
-
-  return (
-    <div className="container" style={{ backgroundImage: `url(./components/imagenes/backgroundmadera.jpg)` }}>
-      <h1>To Do List</h1>
-      <button onClick={handleToggleForm}>
-        {showForm ? "Ocultar formulario" : "Agregar tarea"}
-      </button>
-      {showForm && <TaskForm onHideForm={() => setShowForm(false)} />}
-    </div>
-  );
-};
-
-export default App;
-
-
-/* import React, { useState, useEffect } from 'react';
-import TaskForm from './components/formulario/formulario';
-import TaskItem from './components/taskItem/taskIten';
-import './App.css';
-
-const App = () => {
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    setTasks(storedTasks);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
-
-  const handleAddTask = (newTask) => {
-    setTasks([...tasks, { id: Date.now(), description: newTask, completed: false }]);
-  };
-
-  const handleCompleteTask = (taskId, completed) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === taskId ? { ...task, completed } : task
-      )
+      <Box 
+       className="boxTareas"
+      >
+      <Text fontSize="20px" fontWeight="bold" mb={4}>
+            Todo List
+      </Text>
+        <Box
+          mx="auto"
+          mt={8}
+          bgSize="cover"
+          className="todo-list-container"
+          bgRepeat="no-repeat"
+          p={8}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          width="34rem" // Ancho fijo de la imagen
+          height={`calc(90vh + ${tasks.length * 2}rem)`} // Ajusta el valor 4rem según tus necesidades
+        >
+          
+          <TaskForm addTask={addTask} />
+          {tasks.length > 0 ? (
+            <TaskList
+              tasks={tasks}
+              completeTask={completeTask}
+              deleteTask={deleteTask}
+            />
+          ) : (
+            <Text fontSize="6xl" color="white">
+              No tasks to do.
+            </Text>
+          )}
+        </Box>
+      </Box>
     );
-  };
-
-  const handleDeleteTask = (taskId) => {
-    setTasks(tasks.filter((task) => task.id !== taskId));
-  };
-
-  return (
-    <App>
-    <div className="container">
-      <h1>To Do List</h1>
-      <TaskForm onAddTask={handleAddTask} />
-      <ul className="list-group">
-        {tasks.map((task) => (
-          <TaskItem
-            key={task.id}
-            task={task}
-            onCompleteTask={handleCompleteTask}
-            onDeleteTask={handleDeleteTask}
-          />
-        ))}
-      </ul>
-    </div></App>
-  );
 };
 
 export default App;
- */
