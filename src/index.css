@@ -19,3 +19,11 @@ code {
   background-image: url('../public/fondo.jpg');
   background-size: cover;
 }
+
+
+@media only screen and (max-width: 600px) {
+  #root {
+    min-height: 100vh;
+    
+  }
+}
