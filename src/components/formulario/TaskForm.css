@@ -42,10 +42,9 @@ button {
   margin-top: 15px;
 }
 
-/* Media Query para pantallas más pequeñas (ej. dispositivos móviles) */
 @media screen and (max-width: 768px) {
   .boxTareas {
-    height: 80vh; /* Ajusta según tus necesidades para dispositivos más pequeños */
-    width: 80vw; /* Ajusta según tus necesidades para dispositivos más pequeños */
+    height: 80vh;
+    width: 80vw; 
   }
 }
