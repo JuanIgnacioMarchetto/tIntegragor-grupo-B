@@ -62,7 +62,7 @@ const TaskForm = ({ addTask }) => {
             <Field
               type="date"
               name="taskDeadline"
-              placeholder="Deadline (optional)"
+              placeholder="Add New Task.."
               as={Input}
               aria-label="Deadline"
             />
@@ -76,7 +76,7 @@ const TaskForm = ({ addTask }) => {
             </Text>
   
             <Button type="submit" colorScheme="blue">
-              Add task
+              Add New task
             </Button>
           </VStack>
         </Form>

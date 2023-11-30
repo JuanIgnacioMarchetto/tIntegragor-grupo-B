@@ -26,11 +26,14 @@ const TaskItem = ({ task, completeTask, deleteTask }) => {
         </Text>
         {task.deadline && (
           <Text fontSize="sm" color="gray.500">
-            Deadline: {task.deadline}
+            {task.deadline}
           </Text>
         )}
       </VStack>
-      <Box>
+      <Box style={{
+        display:'flex'
+      }
+      }>
         <IconButton
           icon={<CheckSquare />}
           onClick={handleComplete}
