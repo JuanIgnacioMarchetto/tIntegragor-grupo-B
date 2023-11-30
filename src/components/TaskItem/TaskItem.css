@@ -11,6 +11,14 @@
     padding: 1px;
 }
 
+.css-tl3ftk {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-content: space-between;
+}
 
 button{
     width: fit-content;
