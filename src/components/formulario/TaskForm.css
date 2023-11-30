@@ -1,12 +1,4 @@
-.css-tl3ftk {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.5rem;
-margin:10px;
- align-content: space-between;
-}
+
 .item-container {
   background-repeat: no-repeat;
   background-size: contain;
