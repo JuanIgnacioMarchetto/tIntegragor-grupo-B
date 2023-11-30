@@ -18,7 +18,15 @@ button {
   width: fit-content;
   height: fit-content;
   font-size: 1.5rem;
-  margin: 10px auto; 
+  margin: 10px auto;
+  background-color: lightblue;
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer;
+
+  :hover {
+    background-color: lightgreen; 
+  }
 }
 .taskComplete {
   text-decoration: line-through;
