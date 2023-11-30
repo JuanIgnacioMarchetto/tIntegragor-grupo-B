@@ -10,15 +10,14 @@
     border: 2px solid black;
     padding: 1px;
 }
-.css-tl3ftk {
 
+.css-tl3ftk {
     display: flex;
     -webkit-box-align: center;
-    align-items: flex-start;
+    align-items: start;
     flex-direction: column;
     gap: 0.5rem;
     align-content: space-between;
-    align-items: start;
    margin: 10px;
 }
 button{
