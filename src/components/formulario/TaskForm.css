@@ -45,5 +45,6 @@ button {
   .boxTareas {
     height: 80vh;
     width: 80vw;
+   margin-top: 30px;
   }
 }
