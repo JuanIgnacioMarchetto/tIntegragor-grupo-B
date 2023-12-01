@@ -8,7 +8,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid black;
+  border: none;
   padding: 10px; 
   margin-bottom: 10px; 
 }
@@ -17,14 +17,21 @@ button {
   height: fit-content;
   font-size: 1.5rem;
   margin: 10px auto;
-  background-color: lightblue;
+  background-color: rgb(14, 235, 69);
   border: none; 
   padding: 10px 20px; 
   cursor: pointer;
 
   :hover {
-    background-color: lightgreen; 
+    background-color: rgb(199, 243, 5); 
   }
+}
+button#delete {
+  
+  background-color: rgb(248, 8, 0);
+
+
+  
 }
 .taskComplete {
   text-decoration: line-through;
@@ -38,7 +45,7 @@ button {
 }
 .boxTareas {
   margin: auto;
-  background-image: url('https://libretasyagendaspersonalizadas.weebly.com/uploads/2/2/6/5/22653852/1750846_orig.png');
+  background-image: url('fondoTareas.jpg');
   background-size: cover;
   height: 500px;
   width: 500px;
@@ -48,10 +55,38 @@ button {
   margin-top: 15px;
 }
 
+.css-18tn7ki {
+  
+  color: #1c1b1b !important;
+}
+
+
+.transparent-input {
+  border: none;
+  background-color: transparent;
+}
+
 @media screen and (max-width: 768px) {
   .boxTareas {
     height: 80vh;
     width: 80vw;
    margin-top: 30px;
   }
+  .css-hbj0d5{
+    width: 70%;
+  }
+
+    .css-bqkvoi {
+      width: 11rem !important;
+      margin: 32px !important;
+    }
+
+    p{
+      font-size:small !important;
+    }
+    .css-9nmd4c{
+      width: 11rem !important;
+       margin-left: 100px;
+    }
+   
 }

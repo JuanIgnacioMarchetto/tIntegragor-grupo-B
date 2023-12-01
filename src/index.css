@@ -13,9 +13,25 @@ code {
 }
 
 #root {
-  min-height: 110vh;
+  height: 130vh; 
   display: flex;
   flex-direction: column;
   background-image: url('../public/fondo.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+.titulo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; 
+}
+
+#titulo {
+  font-family: Courier, monospace; 
+  font-size: 50px; 
+  font-weight: bold;
+  color: white;
+}
+

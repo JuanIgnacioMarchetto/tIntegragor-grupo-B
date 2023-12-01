@@ -29,3 +29,13 @@
 .completed{
     background-color: black;
 }
+
+ul{
+    width: 100%;
+}
+
+p{
+    font-family: Courier, monospace; 
+  font-size: 20px; 
+  font-weight: bold;
+}
